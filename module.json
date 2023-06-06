@@ -27,6 +27,6 @@
 	"manifest": "https://github.com/veilza/show-token-art/releases/latest/download/module.json",
 	"url": "https://github.com/veilza/show-token-art",
 	"download": "https://github.com/veilza/show-token-art/releases/latest/download/show-token-art.zip",
-	"readme": "https://github.com/veilza/show-token-art/blob/master/readme.md",
+	"readme": "https://github.com/veilza/show-token-art/blob/main/readme.md",
 	"changelog": "https://github.com/veilza/show-token-art/releases"
 }
