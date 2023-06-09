@@ -100,8 +100,8 @@ class ShowArt {
 		const titles = this.getTokenTitles(token.document, actor)
 
 		// Return the image and title;
-		// If avatar image is present, show that
-		// If not, show token image
+		// If avatarImage is true, show the avatar
+		// If not, show the token image and token name
 		return {
 			image: avatarImage ? images.actor : images.token,
 			title: avatarImage ? titles.actor : titles.token
@@ -122,14 +122,24 @@ class ShowArt {
 	
 	// Grab the title of the token
 	static getTokenTitles(token, actor) {
-		const	M = CONST.TOKEN_DISPLAY_MODES,
-				dn = token.displayName
+		const	displayModes = CONST.TOKEN_DISPLAY_MODES
+		const displayName = token.displayName
 
-		if (dn == M.ALWAYS || dn == M.HOVER) return {
-			actor: token.actorData.name || actor.name,
-			token: token.name,
+		// If the "displayName" setting is set to "Always"
+		// or "On Hover," then show the name on the token
+		// Using the name on the token is most accurate,
+		// and prevents accidental spoilers of a character's
+		// "true name" if the one on the actor sheet is different
+		// from the one on the token.
+		if (displayName == displayModes.ALWAYS || displayName == displayModes.HOVER) {
+			return {
+				actor: token.name,
+				token: token.name
+			}
 		}
 
+		// If "displayName" is anything else, just show
+		// "Actor Image" or "Token Image"
 		return { 
 			actor: game.i18n.localize("STA.ActorImg"),
 			token: game.i18n.localize("STA.TokenImg")
