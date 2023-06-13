@@ -150,7 +150,11 @@ class ShowArt {
 	static getTokenImages(token, actor) {
 		const mysteryDefaults = [
 			"icons/svg/mystery-man.svg", // Foundry default icon
-			"systems/pf2e/icons/default-icons/character.svg" // PF2e default icon
+			"systems/pf2e/icons/default-icons/character.svg", // PF2e default icon
+			"systems/pf2e/icons/default-icons/npc.svg", // PF2e default icon for NPCs
+			"systems/pf2e/icons/default-icons/familiar.svg", //PF2e default icon for familiars
+			"systems/pf2e/icons/default-icons/hazard.svg", // PF2e default icon for hazards
+			"systems/pf2e/icons/default-icons/vehicle.svg" // PF2e default icon for vehicles
 		]
 		const actorData = token.actorData
 
@@ -166,10 +170,8 @@ class ShowArt {
 		// then replace the default with the opposing image path
 		if (avatarMystery) {
 			actorImg = avatarMystery ? tokenImg : actorImg
-			console.log("Token2!")
 		} else if (avatarMystery) {
 			tokenImg = tokenMystery ? actorImg : tokenImg
-			console.log("Token!")
 		}
 
 		return { actor: actorImg, token: tokenImg }
