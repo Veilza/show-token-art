@@ -2,13 +2,19 @@
 	"id": "show-token-art",
 	"title": "Show Token Art",
 	"description": "Add keybindings to allow both players and game masters to view a token's art or avatar.",
-	"authors": [
-		{
-			"name": "Veilza",
-			"url": "https://github.com/Veilza"
-		}
-	],
-	"version": "1.0.2",
+  "authors": [
+    {
+      "name": "Veilza",
+      "discord": "veilza",
+      "flags": {
+        "twitter": "https://twitter.com/VeilzaKinsemi",
+        "github": "https://github.com/Veilza",
+        "paypal": "https://www.paypal.com/donate/?hosted_button_id=T5ZD4T9PSZZVA",
+        "ko-fi": "https://ko-fi.com/VeilzaKinsemi"
+      }
+    }
+  ],
+	"version": "1.0.3",
 	"compatibility": {
 		"minimum": 10,
 		"verified": 11
