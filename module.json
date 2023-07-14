@@ -23,6 +23,7 @@
 	"scripts": [
 		"show-token-art.js"
 	],
+  "license": "./LICENSE",
 	"languages": [
 		{
 			"lang": "en",
