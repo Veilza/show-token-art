@@ -159,10 +159,9 @@ class ShowArt {
       'systems/pf2e/icons/default-icons/hazard.svg', // PF2e default icon for hazards
       'systems/pf2e/icons/default-icons/vehicle.svg' // PF2e default icon for vehicles
     ]
-    const actorData = token.actor
 
-    // Check
-    let actorImg = actorData.img || actor.img
+    // Set the actor image and token image
+    let actorImg = token.actor.img || actor.img
     let tokenImg = token.texture.src
 
     // Check if either actorImg or tokenImg are set to a default icon
@@ -177,6 +176,7 @@ class ShowArt {
       tokenImg = tokenMystery ? actorImg : tokenImg
     }
 
+    // Return the resulting actor and token images after all data manipulation is done
     return { actor: actorImg, token: tokenImg }
   }
 }
