@@ -186,7 +186,7 @@ class MediaPopout extends ImagePopout {
   constructor (src, options = {}) {
     super(src, options)
 
-    this.options.template = 'modules/show-token-art/art-popout.html'
+    this.options.template = 'modules/show-token-art/art-popout.hbs'
   }
 
   /** @override */
