@@ -33,7 +33,7 @@
 			"path": "lang/en.json"
 		}
 	],
-	"manifest": "https://github.com/veilza/show-token-art/releases/download/1.1.0/system.json",
+	"manifest": "https://github.com/veilza/show-token-art/releases/download/1.1.0/module.json",
 	"url": "https://github.com/veilza/show-token-art",
 	"download": "https://github.com/veilza/show-token-art/releases/download/1.1.0/show-token-art-1.1.0.zip",
 	"readme": "https://github.com/veilza/show-token-art/blob/main/readme.md",
