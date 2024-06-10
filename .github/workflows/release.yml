@@ -24,7 +24,6 @@ jobs:
                 data: 
                     '{
                         "id": "show-token-art",
-                        "dry-run": true,
                         "release": {
                             "version": "${{ github.event.release.tag_name }}",
                             "manifest": "https://github.com/veilza/show-token-art/releases/download/${{ github.event.release.tag_name }}/module.json",
