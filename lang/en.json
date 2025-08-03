@@ -1,4 +1,6 @@
 {
+	"STA.ModuleName": "Show Token Art",
+
 	"STA.TokenImg": "Token Image",
 	"STA.keybind.tokenImage.name": "Show Token Art.",
 	"STA.keybind.tokenImage.hint": "Shows the token of the selected or targeted actor(s).",

@@ -1,6 +1,8 @@
-/* global game, Hooks, ImagePopout, CONST */
+/* global game, Hooks, CONST */
 
-class ShowArt {
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
+
+class ShowTokenArt {
   // Registers keybindings to show art for tokens and tiles.
   // The default binding is Shift + I to show the artwork, and
   // Shift + O to share the actor's avatar artwork.
@@ -16,7 +18,7 @@ class ShowArt {
           modifiers: ['Shift']
         }
       ],
-      onDown: keybind => this.handleShowArt(false)
+      onDown: keybind => this.handleShowTokenArt(false)
     })
     // Keybinding for opening the avatar art
     game.keybindings.register('show-token-art', 'avatar-art-open', {
@@ -28,13 +30,13 @@ class ShowArt {
           modifiers: ['Shift']
         }
       ],
-      onDown: keybind => this.handleShowArt(true)
+      onDown: keybind => this.handleShowTokenArt(true)
     })
   }
 
   // Displays an image popup with the image and title from the
   // selected or targeted actor
-  static handleShowArt (altImage) {
+  static handleShowTokenArt (altImage) {
     const targetedObject = game.user.targets
     const selectedObject = game.canvas.activeLayer.controlled
 
@@ -111,10 +113,13 @@ class ShowArt {
   }
 
   // Creates and renders a custom image popout
-  static createImagePopup (image, title) {
-    return new MediaPopout(image, {
-      title,
-      shareable: true
+  static createImagePopup (src, title) {
+    return new MediaPopoutApplication({
+      src,
+      shareable: true,
+      window: {
+        title,
+      }
     }).render(true)
   }
 
@@ -182,20 +187,44 @@ class ShowArt {
 }
 
 // Just a basic popout for media
-class MediaPopout extends ImagePopout {
-  constructor (src, options = {}) {
-    super(src, options)
-
-    this.options.template = 'modules/show-token-art/templates/art-popout.hbs'
+export class MediaPopoutApplication extends HandlebarsApplicationMixin(foundry.applications.apps.ImagePopout) {
+  static DEFAULT_OPTIONS = {
+    classes: ['show-token-art'],
   }
 
-  /** @override */
-  async getData (options) {
-    const data = await super.getData()
+  _getHeaderControls () {
+    console.log(this.options)
+
+    const controls = this.options.window.controls
+
+    console.log(controls);
+
+    return controls
+  }
+
+  // Localize the title here instead of the DEFAULT_OPTIONS because i18n doesn't
+  // initiate before this application is registered
+  get title () {
+    return game.i18n.localize('STA.ModuleName')
+  }
+
+  // Set up the template part(s), of which there's only one for now
+  static PARTS = {
+    form: {
+      template: 'modules/show-token-art/templates/art-popout.hbs'
+    }
+  }
+
+  // Pass the data into the application window
+  async _prepareContext () {
+    const data = await super._prepareContext({
+      isFirstRender: false
+    })
+
     data.isVideo = this.video
 
     return data
   }
 }
 
-Hooks.once('init', ShowArt.registerBindings.bind(ShowArt))
+Hooks.once('init', ShowTokenArt.registerBindings.bind(ShowTokenArt))
