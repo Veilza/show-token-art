@@ -13,10 +13,10 @@
       }
     }
   ],
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"compatibility": {
-		"minimum": 10,
-		"verified": 12.327
+		"minimum": 13,
+		"verified": 13.346
 	},
 	"socket": "true",
   "esmodules": [
@@ -33,11 +33,11 @@
 			"path": "lang/en.json"
 		}
 	],
-	"manifest": "https://github.com/veilza/show-token-art/releases/download/1.1.1/module.json",
+	"manifest": "https://github.com/veilza/show-token-art/releases/download/1.2.0/module.json",
 	"url": "https://github.com/veilza/show-token-art",
-	"download": "https://github.com/veilza/show-token-art/releases/download/1.1.1/show-token-art-1.1.1.zip",
+	"download": "https://github.com/veilza/show-token-art/releases/download/1.2.0/show-token-art.zip",
 	"readme": "https://github.com/veilza/show-token-art/blob/main/readme.md",
-	"changelog": "https://github.com/veilza/show-token-art/releases/tag/1.1.1",
+	"changelog": "https://github.com/veilza/show-token-art/releases/tag/1.2.0",
   "flags": {
     "hotReload": {
       "extensions": ["css", "hbs", "json"],
