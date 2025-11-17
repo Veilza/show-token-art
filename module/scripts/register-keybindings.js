@@ -24,6 +24,7 @@ export const registerKeybindings = async function () {
         modifiers: ['Shift']
       }
     ],
+    restricted: true,
     onDown: () => ShowTokenArt.handleShowTokenArt(false, true)
   })
 
@@ -50,6 +51,7 @@ export const registerKeybindings = async function () {
         modifiers: ['Shift']
       }
     ],
+    restricted: true,
     onDown: () => ShowTokenArt.handleShowTokenArt(true, true)
   })
 }
