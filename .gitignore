@@ -1,2 +1,14 @@
+# IDE
+.idea/
+.vs/
 
+# Node Modules
+node_modules/
+npm-debug.log
+
+# Pack files
+packs/*
+!*.db
+
+# Module .zip file
 *.zip

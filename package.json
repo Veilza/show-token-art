@@ -1,0 +1,40 @@
+{
+  "name": "show-token-art",
+  "version": "1.0.0",
+  "description": "Package details for the Show Token Art module on FoundryVTT",
+  "scripts": {
+    "eslint": "eslint -c eslint.config.js *"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Veilza",
+  "license": "./LICENSE",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-hbs": "^1.0.3",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^15.9.0"
+  },
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veilza/show-token-art.git"
+  },
+  "keywords": [
+    "foundryvtt",
+    "foundryvtt-module"
+  ],
+  "bugs": {
+    "url": "https://github.com/Veilza/show-token-art/issues"
+  },
+  "homepage": "https://github.com/Veilza/show-token-art#readme",
+  "dependencies": {
+    "@eslint/compat": "^1.4.1",
+    "eslint-plugin-prettier": "^5.5.4"
+  }
+}
