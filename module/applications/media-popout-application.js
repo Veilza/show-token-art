@@ -5,24 +5,20 @@ export class MediaPopoutApplication extends HandlebarsApplicationMixin(
 ) {
   static DEFAULT_OPTIONS = {
     classes: ['show-token-art']
+    // Use this when we implement the image gallery
+    //id: 'show-token-art-popout',
   }
 
   _getHeaderControls() {
-    const controls = this.options.window.controls
+    const controls = super._getHeaderControls()
 
     return controls
   }
 
-  // Localize the title here instead of the DEFAULT_OPTIONS because i18n doesn't
-  // initiate before this application is registered
-  get title() {
-    return game.i18n.localize('STA.ModuleName')
-  }
-
   // Set up the template part(s), of which there's only one for now
   static PARTS = {
-    form: {
-      template: 'modules/show-token-art/templates/art-popout.hbs'
+    popout: {
+      template: 'templates/apps/image-popout.hbs'
     }
   }
 
@@ -30,6 +26,7 @@ export class MediaPopoutApplication extends HandlebarsApplicationMixin(
   async _prepareContext() {
     const data = await super._prepareContext({
       isFirstRender: false
+      isFirstRender: true
     })
 
     data.isVideo = this.video
