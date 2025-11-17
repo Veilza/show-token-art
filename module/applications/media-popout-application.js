@@ -26,7 +26,6 @@ export class MediaPopoutApplication extends HandlebarsApplicationMixin(
   async _prepareContext() {
     const data = await super._prepareContext({
       isFirstRender: false
-      isFirstRender: true
     })
 
     data.isVideo = this.video
