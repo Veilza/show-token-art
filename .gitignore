@@ -12,3 +12,4 @@ packs/*
 
 # Module .zip file
 *.zip
+show-token-art.lock
